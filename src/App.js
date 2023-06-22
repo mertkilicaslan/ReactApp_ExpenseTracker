@@ -1,27 +1,16 @@
-import { Component, useState } from "react";
+import Expenses from "./components/Expenses";
 
 function App() {
-  const [state, setFunction] = useState(true);
+  const expenses = [
+    { id: "e1", title: "Protein", amount: 698, date: new Date(2023, 11, 21) },
+    { id: "e2", title: "Creatine", amount: 31, date: new Date(2021, 2, 11) },
+    { id: "e3", title: "BCAA", amount: 99, date: new Date(2022, 5, 15) },
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <p>YARRAK</p>
-        <button
-          onClick={() => {
-            setFunction(!state);
-          }}
-        >
-          {state.toString()}
-        </button>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2 className="App-header">Let's get started</h2>
+      <Expenses items={expenses}></Expenses>
     </div>
   );
 }
