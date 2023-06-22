@@ -1,14 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component, useState } from "react";
 
 function App() {
+  const [state, setFunction] = useState(true);
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        <p>YARRAK</p>
+        <button
+          onClick={() => {
+            setFunction(!state);
+          }}
+        >
+          {state.toString()}
+        </button>
         <a
           className="App-link"
           href="https://reactjs.org"
