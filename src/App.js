@@ -2,13 +2,14 @@ import { useState } from "react";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 
-const expenses = [
-  { id: "e1", title: "Protein", amount: 698, date: new Date(2023, 11, 21) },
-  { id: "e2", title: "Creatine", amount: 31, date: new Date(2021, 2, 11) },
-  { id: "e3", title: "BCAA", amount: 99, date: new Date(2022, 5, 15) },
+const DUMMY_EXPENSES = [
+  { id: 1, title: "Protein", amount: 698, date: new Date(2019, 11, 21) },
+  { id: 2, title: "Creatine", amount: 31, date: new Date(2021, 2, 11) },
+  { id: 3, title: "BCAA", amount: 99, date: new Date(2020, 5, 15) },
 ];
+
 const App = () => {
-  const [expensesList, setExpensesList] = useState(expenses);
+  const [expensesList, setExpensesList] = useState(DUMMY_EXPENSES);
 
   const saveExpenseDataHandler = (enteredExpenseData) => {
     const expenseData = {

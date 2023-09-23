@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import "./ExpenseForm.css";
+import "../../styles/ExpenseForm.css";
 
 const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
@@ -29,12 +29,13 @@ const ExpenseForm = (props) => {
 
     const expenseData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,
       date: new Date(enteredDate),
     };
 
     props.onSaveExpenseData(expenseData);
     inputClearHandler();
+    props.setOpenAddNewExpenseTab(true);
   };
 
   return (
@@ -76,6 +77,14 @@ const ExpenseForm = (props) => {
       </div>
 
       <div className="new-expense__actions">
+        <button
+          type="button"
+          onClick={() => {
+            props.setOpenAddNewExpenseTab(true);
+          }}
+        >
+          Cancel
+        </button>
         <button type="submit">Update</button>
       </div>
     </form>

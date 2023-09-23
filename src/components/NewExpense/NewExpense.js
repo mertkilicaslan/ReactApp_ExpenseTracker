@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 
-import "./NewExpense.css";
+import "../../styles/NewExpense.css";
 import ExpenseForm from "./ExpenseForm";
 
 const NewExpense = (props) => {
+  const [openAddNewExpenseTab, setOpenAddNewExpenseTab] = useState(true);
+
   return (
     <div className="new-expense">
-      <ExpenseForm onSaveExpenseData={props.onSaveExpenseData} />
+      {openAddNewExpenseTab ? (
+        <button
+          onClick={() => {
+            setOpenAddNewExpenseTab(false);
+          }}
+        >
+          Add new Expense
+        </button>
+      ) : (
+        <ExpenseForm
+          onSaveExpenseData={props.onSaveExpenseData}
+          setOpenAddNewExpenseTab={setOpenAddNewExpenseTab}
+        />
+      )}
     </div>
   );
 };
