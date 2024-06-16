@@ -35,7 +35,7 @@ const ExpenseForm = (props) => {
 
     props.onSaveExpenseData(expenseData);
     inputClearHandler();
-    props.setOpenAddNewExpenseTab(true);
+    props.setAddNewExpenseTabOpened(false);
   };
 
   return (
@@ -79,9 +79,7 @@ const ExpenseForm = (props) => {
       <div className="new-expense__actions">
         <button
           type="button"
-          onClick={() => {
-            props.setOpenAddNewExpenseTab(true);
-          }}
+          onClick={() => props.setAddNewExpenseTabOpened(false)}
         >
           Cancel
         </button>
