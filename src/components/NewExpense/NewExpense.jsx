@@ -4,23 +4,19 @@ import "../../styles/NewExpense.css";
 import ExpenseForm from "./ExpenseForm";
 
 const NewExpense = (props) => {
-  const [openAddNewExpenseTab, setOpenAddNewExpenseTab] = useState(true);
+  const [isAddNewExpenseTabOpened, setAddNewExpenseTabOpened] = useState(false);
 
   return (
     <div className="new-expense">
-      {openAddNewExpenseTab ? (
-        <button
-          onClick={() => {
-            setOpenAddNewExpenseTab(false);
-          }}
-        >
-          Add new Expense
-        </button>
-      ) : (
+      {isAddNewExpenseTabOpened ? (
         <ExpenseForm
           onSaveExpenseData={props.onSaveExpenseData}
-          setOpenAddNewExpenseTab={setOpenAddNewExpenseTab}
+          setAddNewExpenseTabOpened={setAddNewExpenseTabOpened}
         />
+      ) : (
+        <button onClick={() => setAddNewExpenseTabOpened(true)}>
+          Add new Expense
+        </button>
       )}
     </div>
   );
