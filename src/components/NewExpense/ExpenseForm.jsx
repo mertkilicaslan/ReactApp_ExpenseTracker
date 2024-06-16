@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import { YEARS_IN_DROPDOWN } from "../../utils/constants";
 import "../../styles/ExpenseForm.css";
 
 const ExpenseForm = (props) => {
@@ -69,8 +70,8 @@ const ExpenseForm = (props) => {
             type="date"
             name="date"
             value={enteredDate}
-            min="2020-01-01"
-            max="2023-13-31"
+            min={YEARS_IN_DROPDOWN[YEARS_IN_DROPDOWN.length - 1] + "-01-01"}
+            max={YEARS_IN_DROPDOWN[0] + "-12-31"}
             onChange={inputChangeHandler}
           />
         </div>

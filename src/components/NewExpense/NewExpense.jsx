@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-import "../../styles/NewExpense.css";
 import ExpenseForm from "./ExpenseForm";
+import "../../styles/NewExpense.css";
 
 const NewExpense = (props) => {
   const [isAddNewExpenseTabOpened, setAddNewExpenseTabOpened] = useState(false);
@@ -15,7 +15,7 @@ const NewExpense = (props) => {
         />
       ) : (
         <button onClick={() => setAddNewExpenseTabOpened(true)}>
-          Add new Expense
+          Add a new expense
         </button>
       )}
     </div>
